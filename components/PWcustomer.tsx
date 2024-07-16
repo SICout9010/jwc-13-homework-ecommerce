@@ -35,10 +35,14 @@ function PWcustomer() {
             </svg>
           </div>
         </div>
+      </div>
 
-        <div className="flex gap-6">
+      <div className="flex gap-6 font-normal relative w-full">
+        
+          <div className="absolute min-w-[500px] min-h-[300px] bg-white right-[10%] top-[-15%] blur-[90px]"></div>
+          <div className="absolute min-w-[500px] min-h-[300px] bg-white left-[10%] top-[-15%] blur-[90px]"></div>
           {com_customer.comment_customer.map((comment) => (
-            <div key={comment.id} className="flex flex-col max-w-[400px] min-h-[240px] rounded-[20px] border-2 border-[#0000001A] p-6">
+            <div key={comment.id} className="flex flex-col min-w-[400px] min-h-[240px] rounded-[20px] border-2 border-[#0000001A] p-6">
               <Rating5star />
               <div className="flex items-center gap-1">
                 <h1 className="text-xl font-bold">{comment.name}</h1>
@@ -62,8 +66,6 @@ function PWcustomer() {
             </div>
           ))}
         </div>
-
-      </div>
     </main>
   );
 }

@@ -14,7 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
-        'slide': 'slide 40s linear infinite',
+        'slide': 'slide 50s linear infinite',
       },
       keyframes: {
         slide: {

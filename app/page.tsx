@@ -1,4 +1,3 @@
-import Promotion from "@/components/Promotion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollBrands from "@/components/ScrollBrands";
@@ -13,12 +12,11 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
-      {/* Promotion Area (Close to unaccept) */}
-      <Promotion />
+
       {/* Header */}
       <Header />
-      {/* CTA Section */}
-      <div className="bg-[#F2F0F1] w-full h-[663px] flex flex-row items-center justify-center overflow-hidden">
+
+      <div className="bg-[#f2f0f1] w-full h-[663px] flex flex-row items-center justify-center overflow-hidden mt-[105px]">
         <div className="flex flex-col items-start justify-center gap-8 p-24">
           <h1 className="text-6xl font-bold text-start max-w-[75%] w-full">
             FIND CLOTHES THAT MATCHES YOUR STYLE

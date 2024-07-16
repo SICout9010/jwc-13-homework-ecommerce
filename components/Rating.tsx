@@ -8,6 +8,7 @@ function Rating({ rating }: { rating: number }) {
     if (isFullStar) {
       return (
         <svg
+          key={i}
           width="19"
           height="17"
           viewBox="0 0 19 17"
@@ -44,7 +45,7 @@ function Rating({ rating }: { rating: number }) {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="h-5 w-5 text-gray-400"
+          className="h-5 w-5 hidden"
         >
           <path
             fillRule="evenodd"
@@ -76,7 +77,11 @@ function Rating({ rating }: { rating: number }) {
     //   {rating}/5
     // </div>
     <div className="flex gap-1 items-center">
-      {[...Array(5)].map((_, i) => renderStar(i))}
+      {[...Array(5)].map((_, i) => 
+        <div key={i}>
+          {renderStar(i)}
+        </div>
+      )}
       {rating}/5
     </div>
   );

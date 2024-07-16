@@ -29,11 +29,12 @@ const com_customer = {
             "id": 6,
             "name": "Sarah M.",
             "comment": "\"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon JWC.CO. The selection of clothes is not only diverse but also on-point with the latest trends.”"
-        }, {
+        },
+        {
             "id": 7,
             "name": "Sarah M.",
-            "comment": "\"I'm blown away by the quality and style of the clothes I received from JWC.CO. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”"
-        },
+            "comment": "\"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon JWC.CO. The selection of clothes is not only diverse but also on-point with the latest trends.”"
+        }
     ]
 }
 

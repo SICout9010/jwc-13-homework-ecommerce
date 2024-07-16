@@ -18,7 +18,7 @@ export default function Home() {
       {/* Header */}
       <Header />
       {/* CTA Section */}
-      <div className="bg-[#F2F0F1] w-full h-[663px] flex flex-row items-center justify-center overflow-hidden">
+      <div className="bg-[#f2f0f1] w-full h-[663px] flex flex-row items-center justify-center overflow-hidden">
         <div className="flex flex-col items-start justify-center gap-8 p-24">
           <h1 className="text-6xl font-bold text-start max-w-[75%] w-full">
             FIND CLOTHES THAT MATCHES YOUR STYLE

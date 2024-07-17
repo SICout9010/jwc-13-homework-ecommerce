@@ -1,17 +1,21 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Rating5star from "./Rating5star";
 import com_customer from "@/lib/com_customer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
+import { Swiper as SwiperInstance } from "swiper";
 
 function PWcustomer() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef<SwiperInstance | null>(null);
+  
   useEffect(() => {
-    const swiper = document.querySelector(".swiper")?.swiper;
-    swiper.navigation.init();
-    swiper.navigation.update();
+    if (swiperRef.current) {
+      swiperRef.current.navigation.init();
+      swiperRef.current.navigation.update();
+    }
   }, []);
 
   return (
@@ -68,6 +72,9 @@ function PWcustomer() {
           setActiveIndex(swiper.realIndex);
         }}
         autoplay={true}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
         className="w-full"
       >
         {com_customer.comment_customer.map((comment) => (

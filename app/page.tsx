@@ -1,4 +1,5 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
+import dynamic from "next/dynamic";
 import Footer from "@/components/Footer";
 import ScrollBrands from "@/components/ScrollBrands";
 import ClothesCard from "@/components/ClothesCard";
@@ -7,12 +8,16 @@ import BrowseByDressStyle from "@/components/BrowseByDressStyle";
 import PWcustomer from "@/components/PWcustomer";
 import Hero from "@/components/Hero";
 
+// Fix SSR Hydration error by using dynamic import
+const Header = dynamic(() => import("@/components/Header"), {ssr: false});
+// :)
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       {/* Header */}
       <Header />
-
+      
+      {/* Hero */}
       <Hero />
       {/* Scroll brands */}
       <ScrollBrands />
@@ -25,7 +30,8 @@ export default function Home() {
           <div className="w-52 h-14 border px-[54px] py-[16px] rounded-[62px] flex justify-center hover:bg-gray-200 hover:cursor-pointer">
             <p>View All</p>
           </div>
-          <h2 className="font-bold text-5xl uppercase mt-[126px]">
+          <div className="w-[1240px] h-0.5 bg-[#0000001A] mt-[64px]"></div>
+          <h2 className="font-bold text-5xl uppercase mt-[62px]">
             Top Selling
           </h2>
           <ClothesCard clothes_props={clothesdb.topselling_clothes} />

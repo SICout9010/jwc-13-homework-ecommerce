@@ -8,6 +8,7 @@ function Rating({ rating }: { rating: number }) {
     if (isFullStar) {
       return (
         <svg
+          key={i}
           width="19"
           height="17"
           viewBox="0 0 19 17"
@@ -44,7 +45,7 @@ function Rating({ rating }: { rating: number }) {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="h-5 w-5 text-gray-400"
+          className="h-5 w-5 hidden"
         >
           <path
             fillRule="evenodd"
@@ -67,16 +68,20 @@ function Rating({ rating }: { rating: number }) {
     //       className={`h-5 w-5 ${i < rating ? 'text-yellow-500' : 'text-gray-400'}`}
     //     >
     //       <path
-    //         fill-rule="evenodd"
+    //         fillRule="evenodd"
     //         d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-    //         clip-rule="evenodd"
+    //         clipRule="evenodd"
     //       ></path>
     //     </svg>
     //   ))}
     //   {rating}/5
     // </div>
     <div className="flex gap-1 items-center">
-      {[...Array(5)].map((_, i) => renderStar(i))}
+      {[...Array(5)].map((_, i) => 
+        <div key={i}>
+          {renderStar(i)}
+        </div>
+      )}
       {rating}/5
     </div>
   );
